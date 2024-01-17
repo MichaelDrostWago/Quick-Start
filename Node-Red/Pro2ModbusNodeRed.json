@@ -1,0 +1,230 @@
+[
+    {
+        "id": "f6f2187d.f17ca8",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": true,
+        "info": ""
+    },
+    {
+        "id": "35fdcab4e2d3cbf7",
+        "type": "modbus-read",
+        "z": "f6f2187d.f17ca8",
+        "name": "Akt. Spannung",
+        "topic": "",
+        "showStatusActivities": false,
+        "logIOActivities": false,
+        "showErrors": false,
+        "unitid": "",
+        "dataType": "HoldingRegister",
+        "adr": "1280",
+        "quantity": "1",
+        "rate": "20",
+        "rateUnit": "s",
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "server": "8e391766896ec2ab",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "x": 460,
+        "y": 160,
+        "wires": [
+            [
+                "d3986b15e6c68a94"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "b625bbebe4cc45da",
+        "type": "modbus-read",
+        "z": "f6f2187d.f17ca8",
+        "name": "Akt. Strom",
+        "topic": "",
+        "showStatusActivities": false,
+        "logIOActivities": false,
+        "showErrors": false,
+        "unitid": "",
+        "dataType": "HoldingRegister",
+        "adr": "1281",
+        "quantity": "1",
+        "rate": "20",
+        "rateUnit": "s",
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "server": "8e391766896ec2ab",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "x": 440,
+        "y": 200,
+        "wires": [
+            [
+                "1aa0ce9a846975ab"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "a23bd86d1b3e603f",
+        "type": "mqtt out",
+        "z": "f6f2187d.f17ca8",
+        "name": "PowerSupply Topic",
+        "topic": "powersupply/",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "f13d4125b78e61a9",
+        "x": 870,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "d3986b15e6c68a94",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "Voltage",
+        "func": "msg.payload = {'Voltage' : msg.payload};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 640,
+        "y": 160,
+        "wires": [
+            [
+                "a23bd86d1b3e603f"
+            ]
+        ]
+    },
+    {
+        "id": "1aa0ce9a846975ab",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "Current",
+        "func": "msg.payload = {'Current' : msg.payload};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 640,
+        "y": 200,
+        "wires": [
+            [
+                "a23bd86d1b3e603f"
+            ]
+        ]
+    },
+    {
+        "id": "31c702a2d8631d43",
+        "type": "modbus-read",
+        "z": "f6f2187d.f17ca8",
+        "name": "Akt. Leistung",
+        "topic": "",
+        "showStatusActivities": false,
+        "logIOActivities": false,
+        "showErrors": false,
+        "unitid": "",
+        "dataType": "HoldingRegister",
+        "adr": "1286",
+        "quantity": "2",
+        "rate": "20",
+        "rateUnit": "s",
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "server": "8e391766896ec2ab",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "x": 450,
+        "y": 280,
+        "wires": [
+            [
+                "ce1c9ff97e478a58"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "ce1c9ff97e478a58",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "Power",
+        "func": "msg.payload = {'Power' : msg.payload};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 630,
+        "y": 280,
+        "wires": [
+            [
+                "a23bd86d1b3e603f"
+            ]
+        ]
+    },
+    {
+        "id": "8e391766896ec2ab",
+        "type": "modbus-client",
+        "name": "Switch",
+        "clienttype": "tcp",
+        "bufferCommands": true,
+        "stateLogEnabled": false,
+        "queueLogEnabled": false,
+        "failureLogEnabled": true,
+        "tcpHost": "192.168.2.254",
+        "tcpPort": "502",
+        "tcpType": "DEFAULT",
+        "serialPort": "/dev/ttyUSB",
+        "serialType": "RTU-BUFFERD",
+        "serialBaudrate": "9600",
+        "serialDatabits": "8",
+        "serialStopbits": "1",
+        "serialParity": "none",
+        "serialConnectionDelay": "100",
+        "serialAsciiResponseStartDelimiter": "0x3A",
+        "unit_id": 1,
+        "commandDelay": 1,
+        "clientTimeout": 1000,
+        "reconnectOnTimeout": true,
+        "reconnectTimeout": 2000,
+        "parallelUnitIdsAllowed": true
+    },
+    {
+        "id": "f13d4125b78e61a9",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "192.168.2.17",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    }
+]
