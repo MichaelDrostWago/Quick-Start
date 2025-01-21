@@ -8,5 +8,6 @@
 ![image](https://github.com/user-attachments/assets/87575a2e-afff-4500-94e7-3bc05f542076)
 
 ## Dashboard
-  ![image](https://github.com/user-attachments/assets/a982f202-1f35-427c-833d-2706ec436994)
+![image](https://github.com/user-attachments/assets/bc35d54b-8e90-421d-8ee3-b407ffca8c7f)
+
 
