@@ -5,7 +5,7 @@
 
  ## Configuration:
     under the Modbus-Read-Node you can configure the Modbus Server of the Wago Pro2
-      ![image](https://github.com/user-attachments/assets/cd2054ed-25df-4b8d-b0dd-a69835a8d20a)
+![image](https://github.com/user-attachments/assets/87575a2e-afff-4500-94e7-3bc05f542076)
 
 ## Dashboard
   ![image](https://github.com/user-attachments/assets/a982f202-1f35-427c-833d-2706ec436994)
