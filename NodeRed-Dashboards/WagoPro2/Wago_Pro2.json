@@ -63,7 +63,7 @@
         "type": "ui-text",
         "z": "30f3aa8b718d7ec4",
         "group": "b5cdea7af83e3290",
-        "order": 6,
+        "order": 3,
         "width": 0,
         "height": 0,
         "name": "",
@@ -102,7 +102,8 @@
         "y": 60,
         "wires": [
             [
-                "dcaa9034f4bc85c1"
+                "dcaa9034f4bc85c1",
+                "51fbf8ebe7aa0456"
             ]
         ],
         "l": false
@@ -216,10 +217,11 @@
         "to": "",
         "reg": false,
         "x": 605,
-        "y": 100,
+        "y": 140,
         "wires": [
             [
-                "24f42b903d84dce2"
+                "24f42b903d84dce2",
+                "13741d731d6da0c7"
             ]
         ],
         "l": false
@@ -229,7 +231,7 @@
         "type": "ui-text",
         "z": "30f3aa8b718d7ec4",
         "group": "b5cdea7af83e3290",
-        "order": 5,
+        "order": 4,
         "width": 0,
         "height": 0,
         "name": "",
@@ -242,7 +244,7 @@
         "color": "#717171",
         "className": "",
         "x": 690,
-        "y": 100,
+        "y": 140,
         "wires": []
     },
     {
@@ -754,7 +756,7 @@
         "type": "ui-text",
         "z": "30f3aa8b718d7ec4",
         "group": "b5cdea7af83e3290",
-        "order": 4,
+        "order": 5,
         "width": 0,
         "height": 0,
         "name": "",
@@ -803,7 +805,7 @@
         "type": "ui-text",
         "z": "30f3aa8b718d7ec4",
         "group": "b5cdea7af83e3290",
-        "order": 3,
+        "order": 6,
         "width": 0,
         "height": 0,
         "name": "",
@@ -852,7 +854,7 @@
         "type": "ui-text",
         "z": "30f3aa8b718d7ec4",
         "group": "b5cdea7af83e3290",
-        "order": 2,
+        "order": 7,
         "width": 0,
         "height": 0,
         "name": "",
@@ -901,7 +903,7 @@
         "type": "ui-text",
         "z": "30f3aa8b718d7ec4",
         "group": "b5cdea7af83e3290",
-        "order": 1,
+        "order": 8,
         "width": 0,
         "height": 0,
         "name": "",
@@ -1520,6 +1522,98 @@
         "wires": [
             []
         ]
+    },
+    {
+        "id": "51fbf8ebe7aa0456",
+        "type": "ui-gauge",
+        "z": "30f3aa8b718d7ec4",
+        "name": "",
+        "group": "b5cdea7af83e3290",
+        "order": 1,
+        "width": 3,
+        "height": 3,
+        "gtype": "gauge-half",
+        "gstyle": "needle",
+        "title": "gauge",
+        "units": "mV",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#ea2626"
+            },
+            {
+                "from": "22000",
+                "color": "#ffc800"
+            },
+            {
+                "from": "23000",
+                "color": "#5cd65c"
+            },
+            {
+                "from": "25000",
+                "color": "#ffc800"
+            },
+            {
+                "from": "26000",
+                "color": "#ea5353"
+            }
+        ],
+        "min": "20000",
+        "max": "28000",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 690,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "13741d731d6da0c7",
+        "type": "ui-gauge",
+        "z": "30f3aa8b718d7ec4",
+        "name": "",
+        "group": "b5cdea7af83e3290",
+        "order": 2,
+        "width": 3,
+        "height": 3,
+        "gtype": "gauge-half",
+        "gstyle": "needle",
+        "title": "gauge",
+        "units": "mA",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#5cd65c"
+            },
+            {
+                "from": "8000",
+                "color": "#ffc800"
+            },
+            {
+                "from": "9000",
+                "color": "#ea5353"
+            }
+        ],
+        "min": "0",
+        "max": "10000",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 690,
+        "y": 100,
+        "wires": []
     },
     {
         "id": "40d89b62dc44e97b",
